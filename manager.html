@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Stash</title>
+  <link rel="stylesheet" href="manager.css">
+</head>
+<body>
+  <main>
+    <header class="top">
+      <div>
+        <h1>🧩 Skill Stash</h1>
+        <p class="sub" id="count"></p>
+      </div>
+      <div class="actions">
+        <button id="btn-files" class="primary">+ Files</button>
+        <button id="btn-folder" class="primary">+ Folder</button>
+      </div>
+    </header>
+
+    <div id="update-banner" class="banner" hidden>
+      <span id="update-text"></span>
+      <a id="update-link" target="_blank" rel="noopener">View release</a>
+      <button id="update-dismiss" class="mini">Dismiss</button>
+    </div>
+
+    <input type="file" id="file-input" multiple hidden>
+    <input type="file" id="folder-input" webkitdirectory multiple hidden>
+
+    <section class="settings">
+      <label>Paste as
+        <select id="paste-mode">
+          <option value="files">files (attached)</option>
+          <option value="text">text (typed)</option>
+        </select>
+      </label>
+      <label class="text-only">Insert at
+        <select id="insert-at">
+          <option value="start">start</option>
+          <option value="end">end</option>
+        </select>
+      </label>
+    </section>
+
+    <input id="search" class="search" type="text" placeholder="Filter skills…">
+    <div id="status" role="status"></div>
+    <div id="list"></div>
+
+    <footer>
+      <button id="btn-export" class="link">Export backup</button>
+      <button id="btn-restore" class="link">Restore backup</button>
+      <input type="file" id="restore-input" accept=".json" hidden>
+    </footer>
+
+    <section class="about" aria-label="About Skill Stash">
+      <div class="about-top">
+        <div class="about-brand"><img src="icons/icon48.png" alt=""><div><strong>Skill Stash</strong> <span id="version"></span><div class="about-by">by Abdulrahman Kamal</div></div></div>
+        <button id="btn-update" class="mini">Check for updates</button>
+      </div>
+      <ul class="links">
+        <li><a href="https://abdulrahmankamal.netlify.app" target="_blank" rel="noopener">Website</a></li>
+        <li><a href="https://github.com/Senku-San101" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/abdulrahman-kamal/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="mailto:abdulrahmankamal609@gmail.com?subject=Skill%20Stash" rel="noopener">Email</a></li>
+        <li><a id="lnk-issues" href="https://github.com/Senku-San101" target="_blank" rel="noopener">Report a bug / suggest a feature</a></li>
+      </ul>
+      <p id="update-line" class="about-small"></p>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="m-title">
+    <div class="box">
+      <h2 id="m-title"></h2>
+      <p id="m-msg" class="m-msg"></p>
+      <div class="field" id="m-name-row">
+        <label for="m-name">Skill name</label>
+        <input id="m-name" type="text" maxlength="120">
+      </div>
+      <div class="field" id="m-cmd-row">
+        <label for="m-cmd">Slash command <span class="opt">(optional, type / in the chat)</span></label>
+        <div class="cmd-input"><span>/</span><input id="m-cmd" type="text" maxlength="32" placeholder="pdf"></div>
+      </div>
+      <div class="field" id="m-desc-row">
+        <label for="m-desc">Description <span class="opt">(optional)</span></label>
+        <textarea id="m-desc" rows="2" maxlength="300"></textarea>
+      </div>
+      <label class="check" id="m-split-row"><input type="checkbox" id="m-split"> Save each file as its own skill</label>
+      <p id="m-error" class="m-error"></p>
+      <div class="btns">
+        <button id="m-cancel">Cancel</button>
+        <button id="m-ok" class="primary">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="shared.js"></script>
+  <script src="manager.js"></script>
+</body>
+</html>

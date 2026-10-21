@@ -1,0 +1,22 @@
+* { box-sizing: border-box; }
+body { margin: 0; width: 280px; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 13px; background: #f7f7f9; color: #1b1b1f; }
+#app { padding: 14px; }
+.brand { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.brand img { width: 26px; height: 26px; }
+h1 { font-size: 16px; margin: 0; }
+#count { color: #666; margin: 0 0 12px; }
+.primary { width: 100%; padding: 9px; border: 0; border-radius: 8px; background: #1b1b1f; color: #fff; font-weight: 600; cursor: pointer; }
+.primary:hover { background: #333; }
+.hint { color: #777; font-size: 12px; line-height: 1.4; margin: 10px 0 0; }
+.update { margin: 10px 0 0; padding: 8px 10px; border-radius: 8px; background: #eef0ff; color: #3b35b8; font-size: 12px; line-height: 1.4; }
+.update a { color: inherit; font-weight: 600; }
+.credits { margin-top: 12px; padding-top: 8px; border-top: 1px solid #e3e3e8; color: #888; font-size: 11px; line-height: 1.6; }
+.credits a { color: #4f46e5; }
+@media (prefers-color-scheme: dark) {
+  body { background: #17171a; color: #eee; }
+  #count, .hint { color: #aaa; }
+  .primary { background: #eee; color: #111; }
+  .update { background: #262640; color: #c9c6ff; }
+  .credits { border-color: #333; color: #888; }
+  .credits a { color: #a5a0ff; }
+}
