@@ -1,4 +1,4 @@
-# Skill Stash 1.2
+# Skill Stash
 
 Stores AI skills as files and attaches them to the chat box of ChatGPT, Claude, Gemini, DeepSeek or Qwen, the same way a file dropped from your file explorer would be attached.
 
